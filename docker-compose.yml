@@ -1,0 +1,10 @@
+version: '3'
+services:
+  playwright:
+    image: playwright-test-git
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/app
+    command: [ "npx", "playwright", "test", "--ui", "--ui-host=0.0.0.0", "--ui-port=8080" ]
