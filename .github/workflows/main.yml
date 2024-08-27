@@ -15,10 +15,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - name: Install Docker Compose
-        run: |
-          apt-get update
-          apt-get install -y docker-compose 
+      - name: Install dependencies
+        run: npm ci 
       - name: Set up
         run: docker-compose build test_ui
       - name: Kiểm tra nội dung thư mục /app
