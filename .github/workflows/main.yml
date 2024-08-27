@@ -21,6 +21,8 @@ jobs:
           apt-get install -y docker-compose 
       - name: Set up
         run: docker-compose build test_ui
+      - name: Kiểm tra nội dung thư mục /app
+        run: docker-compose run test_ui ls /app
       - name: Run Test
         run: docker-compose up test_ui
       - name: Down Docker Compose
