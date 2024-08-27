@@ -13,9 +13,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 18
-      - uses: KengoTODA/actions-setup-docker-compose@v1
-        with:
-          version: '2.14.2' 
+      - name: Install Docker Compose
+        run: |
+          apt-get update
+          apt-get install -y docker-compose 
       - name: Set up
         run: docker-compose build test_ui
       - name: Run Test
