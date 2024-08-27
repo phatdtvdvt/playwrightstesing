@@ -7,4 +7,4 @@ services:
     volumes:
       - .:/app
       - ./playwright-report:/app/playwright-report  # Chia sẻ thư mục báo cáo
-    command: [ "npx", "playwright", "test", "--ui", "--ui-host=0.0.0.0", "--ui-port=8080" ]
+    command: [ "npx", "playwright", "test"]
