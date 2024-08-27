@@ -13,7 +13,7 @@ jobs:
       - uses: KengoTODA/actions-setup-docker-compose@v1
         with:
           version: '2.14.2' 
-      - name: Set up Docker Compose
+      - name: Set up
         run: docker-compose build test_ui
       - name: Run Test
         run: docker-compose up test_ui
