@@ -8,8 +8,6 @@ jobs:
   playwright:
     name: 'Playwright Tests'
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.46.1-jammy
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -23,10 +21,10 @@ jobs:
           apt-get install -y docker-compose
       - name: Set up
         run: docker-compose build test_ui
-      - name: Kiểm tra nội dung thư mục /app/test
-        run: docker-compose run test_ui ls /app
       - name: Run Test
         run: docker-compose up test_ui
+        env:
+          HOME: /root
       - name: Down Docker Compose
         run: docker-compose down
       - uses: actions/upload-artifact@v3
