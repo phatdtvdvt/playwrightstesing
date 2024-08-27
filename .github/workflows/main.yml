@@ -8,13 +8,8 @@ jobs:
   playwright:
     name: 'Playwright Tests'
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.46.1-jammy
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 18
       - name: Install Docker Compose
         run: |
           apt-get update
@@ -22,7 +17,7 @@ jobs:
       - name: Set up Docker Compose
         run: docker-compose build test_ui
       - name: Run Test
-        run: docker-compose up
+        run: docker-compose up test_ui
       - name: Down Docker Compose
         run: docker-compose down
       - uses: actions/upload-artifact@v3
