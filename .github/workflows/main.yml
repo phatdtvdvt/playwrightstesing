@@ -22,10 +22,8 @@ jobs:
       - name: Set up Docker Compose
         run: docker-compose up -d --build
       - name: Down Docker Compose
-        if: always()
         run: docker-compose down
       - uses: actions/upload-artifact@v3
-        if: always()
         with:
           name: playwright-report
           path: playwright-report
