@@ -17,8 +17,8 @@ jobs:
           node-version: 18
       - name: Install Docker Compose
         run: |
-          sudo apt-get update
-          sudo apt-get install -y docker-compose 
+          apt-get update
+          apt-get install -y docker-compose 
       - name: Set up
         run: docker-compose build test_ui
       - name: Run Test
