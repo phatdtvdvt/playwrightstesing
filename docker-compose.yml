@@ -1,13 +1,11 @@
-version: '3'
+version: '3.8'
+
 services:
-  test_ui:
+  app:
     build:
       context: .
-    image: my-app-image:latest
     container_name: my-app-container
     ports:
-      - "8080:8080"
-    volumes:
-      - .:/app
-      - ./playwright-report:/app/playwright-report  # Chia sẻ thư mục báo cáo
+      - "8080:8080"  # Thay đổi theo yêu cầu của ứng dụng
+
     command: [ "npx", "playwright", "test"]
