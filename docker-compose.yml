@@ -3,6 +3,8 @@ services:
   test_ui:
     build:
       context: .
+    image: my-app-image:latest
+    container_name: my-app-container
     ports:
       - "8080:8080"
     volumes:
