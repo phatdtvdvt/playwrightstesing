@@ -14,7 +14,5 @@ RUN npm install
 # Copy the rest of the application files 
 COPY . . 
 
-EXPOSE 8080
 
 # Set entry point for CMD container 
-CMD ["npx","playwright","test"]
