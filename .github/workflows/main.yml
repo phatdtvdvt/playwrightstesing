@@ -22,10 +22,12 @@ jobs:
     - name: Set up Docker Compose
       run: sudo apt-get install docker-compose
 
-    - name: Build and Run Docker Compose
+    - name: Build Docker Compose
       run: |
-        docker-compose up --build -d
-
+        docker-compose build
+    - name: Run Docker Compose
+      run: |
+        docker-compose up 
     - name: Tear Down
       run: |
         docker-compose down
